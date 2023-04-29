@@ -1,0 +1,109 @@
+.people{
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;   
+        @include respond(tab-port){
+            // width:60%;
+            margin: 0 auto;
+        }
+
+        @media(hover:hover){
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__img{
+        padding: 2rem;
+        margin:2rem;
+        width: 38rem;
+        height: 19rem;
+        overflow: hidden;
+        background:$radial-background-primary;
+        box-shadow: $stdBoxShadow;
+        transition: all .3s;
+        display: flex;
+        align-items: center;
+        border-radius: 3px;
+        @media(hover:hover){
+            width: 19rem;
+
+            &:hover{
+                width: 38rem;
+            }
+        }
+
+        &--item{
+            height: 15rem;
+            transition: all .4s;
+        }
+        &--caption{
+            text-align: left;
+            margin-left: 2rem;
+            color: $color-grey-light-1;
+            transition: all .6s;
+            @media(hover:hover){
+                transform: translateX(-10rem) scale(0);
+                opacity: 1;
+            }
+        }
+
+        &:hover &--caption{
+            transform: translateX(0) scale(1);
+            opacity: 1;
+        }
+        &:hover &--item{
+            border-radius: 50%;
+        }
+    }
+}
+
+.people-detail{
+    &__item{
+        background: $linear-background-primary;
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem;
+        border-radius: 3px;
+        @include respond(tab-port){
+            width: 80%;
+        }
+
+        &__title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include respond(tab-port){
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            &--summary{
+                // text-align: center;
+                @include respond(tab-port){
+                    text-align: left;
+                    flex-basis: 40%;
+                }
+                .paragraph{
+                    text-align: center;
+                    @include respond(tab-port){
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+        &__text{
+            padding: 0 2rem;
+            display: none;
+        }
+    }
+    &__shape{
+        flex-basis: 50%;
+        padding: 0 1rem;
+        overflow: hidden;
+    }
+    &__img{
+        width: 55%;
+    }
+}

@@ -1,0 +1,100 @@
+.footer{
+    width: 100%;
+    padding: 5rem 0;
+    background: radial-gradient(circle, $color-primary-dark 0%, $color-black 100%);
+    background-size: cover;
+    position: relative;
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        justify-content: center;
+    }
+    &__logo{
+        &-img,
+        &-name{
+            height: 10rem;
+            margin-bottom: 3rem;
+        }
+    }
+    &__address{
+        white-space: nowrap;
+
+        font-size: 1.2rem;
+    }
+
+    &__navigation{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid $color-grey-dark;
+        border-top: 1px solid $color-grey-dark;
+        padding: 1rem 0;
+        flex-direction: column;
+        @include respond(tab-port){
+            flex-direction: row;
+            border-top: none;
+        }
+
+        &--item{
+            padding: .5rem 0;
+            @include respond(tab-port){
+                padding: 0;
+                transition: all .4s;
+                &:hover{
+                    transform: skewY(-4deg) skewX(-4deg);
+                }
+                &:not(:last-child){
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+        &--link{
+            display: inline-block;
+            text-decoration: none;
+            color: $color-grey-light-1;
+            font-size: $default-font-size;
+            text-transform: uppercase;
+            transition: all .4s;
+            &:hover{
+                color: $color-secondary-light;
+            }
+        }
+    }
+    &__sns{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding-top: .5rem;
+
+        &--item{
+            transition: all .4s;
+            &:hover{
+                transform: translateY(-.4rem);
+            }
+            &:not(:last-child){
+                margin-right: 1.7rem;
+            }
+        }
+        &--link{
+            display: inline-block;
+            text-decoration: none;
+            color: $color-grey-light-1;
+            font-size: 3rem;
+            text-transform: uppercase;
+            transition: all .4s;
+            &:hover{
+                color: $color-secondary-light;
+            }
+        }
+    }
+    &__copyright{
+        @include absBottomCenter(5px);
+        color: $color-grey-light-2;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+}

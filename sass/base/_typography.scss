@@ -1,0 +1,195 @@
+body{
+    
+	// font-family: 'EB Garamond', serif;
+	// font-family: 'Varela Round', serif;
+    // font-family: 'DM Serif Text', serif;
+    // 
+    &.jp{
+        font-family: 'Noto Serif JP', serif;
+    }
+    &.en{
+        font-family: 'Cormorant Garamond', serif;
+    }
+    &.cn{
+        font-family: 'Noto Serif TC', serif;
+    }
+    
+    font-weight: 400;
+    color: $color-grey-light-2;
+}
+
+.container{
+    max-width: 112rem;
+    margin: 0 auto;
+}
+
+.heading{
+    &-primary{
+        color: $color-white;
+        text-transform: uppercase;
+        text-shadow: 0 .3rem .7rem rgba($color-black,.8);
+    
+        backface-visibility: hidden;
+        margin-bottom: 3rem;
+    
+        &--main{
+            display: block;
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: .5rem;
+    
+            animation: moveInTop 1s ease-out;
+            
+    
+            @include respond(tab-port){
+                letter-spacing: 2rem;
+                font-size: 6rem;
+            }
+        }
+    
+        &--sub{
+            display: block;
+            font-size: .5rem;
+            font-weight: 700;
+            letter-spacing: .5rem;
+    
+            animation: zoomIn 1s ease-out;
+    
+            @include respond(tab-port){
+                font-size:2rem;
+                letter-spacing: .7rem;
+            }
+        }
+    }
+
+    &-secondary{
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
+        background: linear-gradient(145deg, $color-white 0%, $color-white 50%,$color-secondary-light 50%);
+        background-size: 230%;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        letter-spacing: .2rem;
+        animation: moveInBottom .6s ease-out .6s;
+        animation-fill-mode: backwards;
+        transition: all .5s;
+        border: none;
+
+        @include respond(tab-port){
+            font-size: 2.5rem;
+        }
+        @include respond(tab-land){
+            font-size: 3rem;
+        }
+
+        &:hover{
+            background-position: 100%;
+            transform: skewY(-2deg) skewX(-10deg) scale(1.1);
+            text-shadow: .5rem 1rem 2rem rgba($color-black, .4)
+        }
+
+        &.fadein{
+            transition-delay: .1s;
+        }
+    }
+    &-tertiary{
+        font-size: $default-font-size;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include respond(tab-port){
+            font-size: 2rem;
+        }
+        @include respond(tab-land){
+            font-size: 2.5rem;
+        }
+    }
+    &-fourth{
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+[class^="paragraph"]{
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
+.paragraph{
+    &{
+        font-size: $default-font-size;
+    }
+
+    &-secondary{
+        font-size: 1.4rem;
+
+    }
+}
+.hover-text{
+    display: none;
+    @media (hover:hover){
+        display: initial;
+        font-size: $default-font-size;
+    }
+}
+.touch-text{
+    display: none;
+    @media (hover:none){
+        display: initial;
+        font-size: $default-font-size;
+    }
+}
+
+.error-message{
+    color: $color-tertiary;
+}
+
+.pre-title{
+    @media only screen and (max-width:351px){
+        display: none;
+    }
+}
+.success{
+    background: $color-secondary-light;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    color: $color-primary-dark;
+    border-radius: 3px;
+}
+.loading{
+    height: 100vh;
+    width: 100%;
+    background:$radial-background-primary;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+
+    &__container{
+        @include absCenter(45%);
+        text-align: center;
+    }
+    &--status{
+        padding: 1rem;
+        &::before{
+            content: "complete";
+        }
+        &.active::before{
+            content: "sending...";
+        }
+    }
+
+    &--complete{
+        width: 6rem;
+        height: 6rem;
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+.gallery{
+    &--item{
+        width: 80%;
+        min-height: 20rem;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    &--img{
+        width: 100%; 
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+}
+
+// #inside-view,
+// #nature-view,
+// #volunteer-view{
+//     opacity: 0;
+// }

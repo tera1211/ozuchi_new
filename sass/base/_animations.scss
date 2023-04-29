@@ -1,0 +1,139 @@
+//HOME HEADER BACKGROUND ANIMATION
+@keyframes imageAnimation{
+    0% {
+	    opacity: 0;
+	    animation-timing-function: ease-in;
+	}
+	20% {
+	    opacity: 1;
+	    transform: scale(1.05);
+	    animation-timing-function: ease-out;
+	}
+	40% {
+	    opacity: 1;
+	    transform: scale(1.1);
+	}
+	60% {
+	    opacity: 0;
+	    transform: scale(1.1);
+	}
+	100% { opacity: 0 }
+}
+
+//MOVE-IN FROM TOP
+@keyframes moveInTop{
+	0%{
+		opacity: 0;
+		-webkit-transform: translateY(-10rem);
+		transform: translateY(-10rem);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+//MOVE IN FROM BOTTOM
+@keyframes moveInBottom{
+	0%{
+		opacity: 0;
+		-webkit-transform: translateY(4rem);
+		transform: translateY(4rem);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+//MOVE IN FROM LEFT
+@keyframes moveInLeft{
+	0%{
+		opacity: 0;
+		-webkit-transform: translateX(-4rem);
+		transform: translateX(-4rem);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+//MOVE IN FROM RIGHT
+@keyframes moveInRight{
+	0%{
+		opacity: 0;
+		-webkit-transform: translateX(4rem);
+		transform: translateX(4rem);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+//ZOOM IN
+@keyframes zoomIn{
+	0%{
+		opacity: 0;
+		-webkit-transform: scale(.5);
+		transform: scale(.5);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes showing{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+//ANIMATION CLASS FOR SCROLL
+.fadein{
+	@media (hover:hover){
+		opacity: 0;
+		-webkit-transform: translateY(5rem);
+		transform: translateY(5rem);
+		transition: all .6s;
+	}
+    &.scrollin{
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.fadeinLeft{
+	@media (hover:hover){
+		opacity: 0;
+		-webkit-transform: translateX(-4rem);
+		transform: translateX(-4rem);
+		transition: all .6s;
+	}
+	&.scrollin{
+		opacity: 1;
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+.fadeinRight{
+	@media (hover:hover){
+		opacity: 0;
+		-webkit-transform: translateX(4rem);
+		transform: translateX(4rem);
+		transition: all .6s;
+	}
+	&.scrollin{
+		opacity: 1;
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}

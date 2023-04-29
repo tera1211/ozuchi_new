@@ -1,0 +1,174 @@
+.btn{
+    &,
+    &:link,
+    &:visited{
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: 1rem;
+        text-decoration: none;
+        padding:1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        border:none;
+        cursor: pointer;
+        box-shadow: $stdBoxShadow;
+        @include respond(tab-land){
+            font-size: $default-font-size;
+        }
+
+    }
+    &:disabled{
+        opacity: .6;
+        cursor: not-allowed;
+        &:hover{
+            transform: translateY(0);
+            box-shadow: $stdBoxShadow;
+            &::after{
+                transform: scale(0);
+            }
+        }
+    }
+    
+    &:hover{
+        transform: translateY(-.3rem);
+        box-shadow: $hoverBoxShadow;
+        &::after{
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+    
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    &:active,
+    &:focus{
+        outline: none;
+        transform: translate(-.1rem);
+        box-shadow: $actBoxShadow;
+    }
+    
+    &--brown{
+        background: radial-gradient(circle, rgba($color-black,.9) 0%, rgba($color-primary-light,.9) 100%);
+        color: $color-grey-light-2;
+        
+        &::after{
+            background:radial-gradient(circle, rgba($color-black,.9) 0%, rgba($color-primary-light,.9) 100%);
+        }
+    }
+
+    &--green{
+        background-image: $linear-background-secondary;
+        color:$color-primary-dark;
+         &::after{
+             background: $linear-background-secondary;
+         }
+    }
+
+    &--animated{
+        animation: moveInBottom 1s ease-out .5s;
+        animation-fill-mode: backwards;
+    }
+    &-text{
+        font-size: $default-font-size;
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        transition: all .4s;
+        display: inline-block;
+        // &:hover{
+        //     color: $color-secondary-light;
+        // }
+        &:focus{
+            outline: 0;
+        }
+    }
+
+    &-show{
+        &,
+        &--jp,
+        &--cn{
+            font-family: inherit;
+        }
+        &::before{
+            content: "Show more \025bc";
+        }
+        &.show::before{
+            content: "Show less \025b2";
+        }
+
+        &--jp{
+            &::before{
+                content: "詳細を見る \025bc";
+            }
+            &.show::before{
+                content: "詳細を隠す \025b2";
+            }
+        }
+        &--cn{
+            &::before{
+                content: "顯示詳細 \025bc";
+            }
+            &.show::before{
+                content: "隱藏詳細 \025b2";
+            }
+        }
+    }
+
+    &-small{
+        &,
+        &:link,
+        &:visited{
+            border: none;
+            background: $linear-background-secondary;
+            padding: .7rem;
+            color: $color-grey-light-2;
+            border-radius: 3px;
+            box-shadow: $stdBoxShadow;
+            text-transform: uppercase;
+            transition: all .4s;
+            // &.gallery-nav__btn{
+            //     opacity: .6;
+            //     margin: .2rem;
+            //     &:hover,
+            //     &.active{
+            //         transform: translateY(-.2rem);
+            //         box-shadow: $hoverBoxShadow;
+            //         color: $color-primary-dark;
+            //     }
+            //     &:hover{
+            //         opacity: .8;
+            //     }
+            //     &.active{
+            //         opacity: 1;
+            //     }
+            // }
+        }
+        &:focus{
+           outline: 0; 
+        }
+    }
+    &-send{
+        &-en{
+            &::before{
+                content: "send";
+            }
+            &.active::before{
+                content: "Sending..."
+            }
+        }
+    }
+}

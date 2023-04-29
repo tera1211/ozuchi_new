@@ -1,0 +1,33 @@
+.content{
+    &-box{
+        background-color: rgba($color-white,.8);
+        padding: 3rem;
+        font-size: $default-font-size;
+        text-align: center;
+        color: $color-primary-dark;
+        box-shadow:$stdBoxShadow;
+        animation: moveInBottom .8s ease-in .8s;
+        animation-fill-mode: backwards;
+        
+        @include respond(tab-port){
+            border-radius: 3px;
+            padding: 4rem;
+        }
+        &.fadein{
+            transition-delay: .2s;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        transition: all .3s;
+        transform: scale(1.3);
+        @include respond(tab-port){
+            padding:0 3rem;
+        }
+
+        &:hover{
+            transform: scale(1.6);
+        }
+    }  
+}

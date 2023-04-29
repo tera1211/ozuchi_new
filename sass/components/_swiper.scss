@@ -1,0 +1,36 @@
+.swiper{
+    &-slide{
+        width: 70%;
+        overflow: hidden;
+        position: relative;
+
+        img{
+            width: 100%;
+            border-radius: 3px;
+            // padding: 0;
+            @include respond(tab-land){
+                width: 70%;
+            }
+        }
+
+        &-content{
+            position: absolute;
+            bottom:0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 3s ease 0s;
+        }
+    }
+    &-button{
+        &-prev,
+        &-next{
+            @media only screen and (hover:none){
+                display: none;
+            }            
+            &:focus{
+                outline: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+[class$="main"]{
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+[class^="section-"]{
+    width: 100%;
+    background: $linear-background-tertiary;
+    margin: 0 auto;
+    padding: 3rem 0;
+    text-align: center;
+    animation: moveInBottom 1s ease-out .8s;
+    animation-fill-mode: backwards;
+    &:not(:last-child),
+    &:not(:first-child){
+        margin: 5rem auto;
+    }
+}
+
+#section{
+    transform:scale(1) translateY(0);
+    opacity: 1;
+    transition: all 1s;
+    &.invisible{
+        transform: scale(.8) translateY(6rem);
+        opacity: 0;
+    }
+}
+
+.home{
+    &__main{
+        background-image: url(../img/ozuchi-4-small.jpg);
+        padding: 2rem 0;
+        @include respond(tab-land){
+            padding: 1rem 0;
+            background-image: url(../img/ozuchi-4-large.jpg);
+        }
+    }
+}
+
+.village{
+    &__main{
+        padding-bottom: 2rem;
+        background-image: url(../img/ozuchi-8-small.jpg);
+        @include respond(tab-land){
+            background-image: url(../img/ozuchi-8-large.jpg);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div>
+    English <span class="lang-menu--array" id="language-array"></span>
+    <ul class="lang-menu__list" id="language-list">
+        <li class="lang-menu__list--item"><a href="" id="jp-link">日本語</a></li>
+        <li class="lang-menu__list--item"><a href="" id="cn-link">中文(繁)</a></li>
+    </ul>
+</div>
+
+<script>
+function getLastPart(url){
+    var parts=url.split("/");
+    return (url.lastIndexOf('/') !== url.length -1 ? parts[parts.length - 1] : parts[parts.length -2]);
+}
+if(window.location.href == window.location.origin+'/en/'){
+    $('#jp-link').attr('href',"../");
+    $('#cn-link').attr('href',"../cn/");    
+}else{
+    $('#jp-link').attr('href',"../" + getLastPart(window.location.href));
+    $('#cn-link').attr('href',"../cn/" + getLastPart(window.location.href));
+}
+
+
+</script>

@@ -1,0 +1,40 @@
+//color
+$color-primary-dark:#5e4136;
+$color-primary-light:#855b4c;
+
+$color-secondary-light:#c7dc68;
+$color-secondary-dark:#98a851;
+
+$color-tertiary:#e75d2a;
+
+
+$color-grey-light-1:#f7f7f7;
+$color-grey-light-2:#eee;
+$color-grey-dark:#777;
+$color-grey-dark-2:#999;
+$color-grey-dark-3:#333;
+$color-white:#fff;
+$color-black:#000;
+
+
+//flex
+$gutter-horizontal:1.5rem;
+
+//font
+$default-font-size:1.6rem;
+
+//background
+$radial-background-primary:radial-gradient(circle, rgba($color-black,.9) 0%, rgba($color-primary-light,.9) 100%);
+$radial-background-secondary:radial-gradient(circle, rgba($color-secondary-dark,.9) 0%, rgba($color-secondary-light,.9) 100%);
+$radial-background-secondary-transparent:radial-gradient(circle, rgba($color-secondary-light,.6) 0%,transparent 40%, transparent 100%);
+$radial-background-tertiary:radial-gradient(circle, rgba($color-black,.9) 0%, rgba($color-tertiary,.9) 100%);
+$radial-background-tertiary-transparent:radial-gradient(circle, rgba($color-tertiary,.3) 0%, transparent 35%, transparent 100%);
+
+$linear-background-primary:linear-gradient(45deg,rgba($color-black,.8) 0%,rgba($color-primary-light,.8) 100%);
+$linear-background-secondary:linear-gradient(45deg,rgba($color-secondary-light,.8) 0%,rgba($color-secondary-dark,.8) 100%);
+// $linear-background-secondary-transparent:linear-gradient(45deg,rgba($color-secondary-light,.6) 0%,transparent 100%);
+$linear-background-tertiary:linear-gradient(45deg, rgba($color-black,.8) 0%, rgba($color-tertiary,.8)  100%);
+//shadow
+$stdBoxShadow:0 .3rem .5rem rgba($color-black,.6);
+$hoverBoxShadow:0 1.3rem 3.5rem rgba($color-black,.6);
+$actBoxShadow:0 .5rem 1rem rgba($color-black, .6);

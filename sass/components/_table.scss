@@ -1,0 +1,25 @@
+.table{
+    width: 100%;
+    margin: 0 auto;
+    table-layout: fixed;
+    text-align: justify;
+    vertical-align: top;
+
+    @include respond(tab-land){
+        width: 80%;
+    }
+    @include respond(desktop){
+        width: 60%;
+    }
+    &__title{
+        text-align: right;
+        padding-right: 3rem;
+        width: 50%;
+        vertical-align: top;
+    }
+    &__content{
+        width: 50%;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+}

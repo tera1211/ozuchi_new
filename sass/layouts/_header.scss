@@ -1,0 +1,173 @@
+/////////////////////////
+//LANDING PAGE HEADER
+.home__header{
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    ///////////////////////////
+    //LANDING PAGE HEADER BACKGROUND
+    &__bg{
+        &,
+        &:after{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -100;
+        }
+        li span{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: none;
+            opacity: 0;
+            z-index: -100;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            animation: imageAnimation 18s linear infinite 0s;
+        }
+
+        li:nth-child(1){
+            span{
+                background-image: url(../img/ozuchi-1-small.jpg);
+                animation-delay: 0;
+    
+                @include respond(tab-land){
+                    background-image: url(../img/ozuchi-1-large.jpg);
+                }
+            }
+        }
+        li:nth-child(2){
+            span{
+                background-image: url(../img/ozuchi-2-small.jpg);
+                animation-delay: 6s;
+
+                @include respond(tab-land){
+                    background-image: url(../img/ozuchi-2-large.jpg);
+                }
+            }
+        } 
+        li:nth-child(3){
+            span{
+                background-image: url(../img/ozuchi-3-small.jpg);
+                animation-delay: 12s;
+
+                @include respond(tab-land){
+                    background-image: url(../img/ozuchi-3-large.jpg);
+                }
+            }
+        } 
+    }
+    /////////////////////////
+    //LANDING PAGE HEADER LOGO
+    &__logo-box{
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+        animation: moveInLeft 1s ease-out 1s;
+        animation-fill-mode: backwards;
+
+        @include respond(tab-port){
+            top: 4rem;
+            left: 4rem;
+        }
+        @include respond(desktop){
+            top: 5rem;
+            left: 5rem;
+        }  
+    }
+    &__logo-img{
+        height: 8rem;
+        border-radius: 50%;
+        box-shadow: $stdBoxShadow;
+        @include respond(tab-port){
+            height: 10rem;
+        }
+    }
+    &__logo-name{
+        display: none;
+        @media only screen and (min-width:37.5em) and (min-height:37.5em){
+            display: initial;
+            height: 10rem;
+        }
+    }
+    &__logo-link{
+        &,
+        &:link,
+        &:visited{
+            text-decoration: none;
+            display: inline-block;
+        }
+    }
+    /////////////////////////////
+    //LANDING PAGE HEADER TEXT BOX
+    &__text-box{
+        @include absCenter(45%);
+        text-align: center;
+    }
+   
+    //////////////////////
+    //LANDING PAGE HEADER SCROLL ICON
+    &__scroll{
+        &,
+        &:link,
+        &:visited{
+            @include absBottomCenter(2px);
+            background-color: $color-primary-dark;
+            border-radius: 3px;
+    
+            font-size: 3.5rem;
+            cursor: pointer;
+            color: $color-white;
+            animation: showing 1s ease-out 2s;
+            animation-fill-mode: backwards;
+            transition: all .3s;
+            text-decoration: none;
+        }
+
+
+        &:hover{
+            @include absBottomCenter(.5rem);
+            color: $color-secondary-light;
+            box-shadow: 0 1rem 1rem rgba($color-black,.9);
+        }
+
+        &:active,
+        &:focus{
+            @include absBottomCenter(.3rem);
+            color: $color-secondary-dark;
+            box-shadow: 0 .8rem .8rem rgba($color-black,.9);
+        }
+    }
+}
+
+
+//////////////////////////////
+//HEADER FOR ALL PAGES EXCEPT LANDING PAGE
+
+.village__header{
+    &__title-box{
+        background:url(../img/ozuchi-6-large.jpg);
+    }
+}
+
+/////////////////////////////
+//HEADER FOR ALL PAGES
+[class$="header__title-box"]{
+    height: 24rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
